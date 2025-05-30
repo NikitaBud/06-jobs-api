@@ -59,13 +59,14 @@ export const showJobs = async () => {
                 for (let i = 0; i < data.jobs.length; i++) {
                     let rowEntry = document.createElement('tr');
 
-                    let editButton = `<td><button type="button" class="editButton" data-id=${ data.jobs[i]._id }>edit</button></td>`;
-                    let deleteButton = `<td><button type="button" class="deleteButton" data-id=${ data.jobs[i]._id }>delete</button></td>`;
+                    let editButton = `<button type="button" class="editButton" data-id=${ data.jobs[i]._id }>edit</button>`;
+                    let deleteButton = `<button type="button" class="deleteButton" data-id=${ data.jobs[i]._id }>delete</button>`;
                     let rowHTML = `
-            <td>${ data.jobs[i].company }</td>
-            <td>${ data.jobs[i].position }</td>
-            <td>${ data.jobs[i].status }</td>
-            <div>${ editButton }${ deleteButton }</div>`;
+                        <td>${ data.jobs[i].company }</td>
+                        <td>${ data.jobs[i].position }</td>
+                        <td>${ data.jobs[i].status }</td>
+                        <td>${ editButton }${ deleteButton }</td>
+                    `;
 
                     rowEntry.innerHTML = rowHTML;
                     children.push(rowEntry);
